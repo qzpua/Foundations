@@ -1,1 +1,27 @@
-1.1 The Web: HTTP, requests and JSON
+1 The Web: HTTP, requests and JSON
+
+**Goal:** understand what actually moves between a browser and a server.
+
+- [ ]  **1.1** Open the browser DevTools → Network tab. Visit any site. Pick one request and write down: the method, URL, status code, 3 request headers, 3 response headers, and the first 5 lines of the response body.
+    a. Chose shinseiki.blog as my site
+    b. Request URL: https://shinseiki.blog/
+    c. Method: GET
+    d. Status Code: 200 OK
+    
+    e. Request Headers: 
+    :authority: shinseiki.blog
+    :method: GET
+    :path: /
+    :scheme: https
+
+    f. Response Headers:
+    alt-svc: h3=":443"; ma=86400
+    content-encoding: br
+    content-type: text/html; charset=UTF-8
+
+    g. Response body
+    <!DOCTYPE html>
+    <!--[if IE 7]>
+    <html class="ie ie7" lang="en">
+    <![endif]-->
+    <!--[if IE 8]>
