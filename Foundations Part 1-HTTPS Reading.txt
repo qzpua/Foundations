@@ -25,3 +25,29 @@
     <html class="ie ie7" lang="en">
     <![endif]-->
     <!--[if IE 8]>
+
+1.2 Use curl to hit https://httpbin.org/get?name=alex. Read the JSON response. Now do a POST with -d '{"hello":"world"}' -H 'Content-Type: application/json' to https://httpbin.org/post.
+
+For the GET request, run this command:
+curl -UseBasicParsing -Uri "https://httpbin.org/get?name=alex" | Select-Object -ExpandProperty Content
+This will fetch the JSON response from the URL. You should see output like a JSON object containing details about the request, including the query parameter name=alex.
+
+POST request:
+curl -UseBasicParsing -Method POST -Body '{"hello":"world"}' -ContentType "application/json" -Uri "https://httpbin.org/post" | Select-Object -ExpandProperty Content
+This sends the POST with the JSON body and header, then shows the response.
+
+1.3 Write a Python script using httpx that does the same GET and POST, and pretty-prints the JSON. Explain the difference between a query string and a request body in 2 sentences.
+
+Feature 	Query String	                                         Request Body
+Location	Part of the URL (e.g., ?id=123)	                         Separate data segment
+Common HTTP Methods	Primarily GET	                                 Primarily POST, PUT, PATCH
+Visibility	Publicly visible in browser address bar and server logs	 Hidden from the URL and logs (unless explicitly logged)
+Data Structure	Simple key-value pairs (flat structure)	             Complex, nested data (JSON, XML, binary)
+Capacity	Very limited (max URL length ~2,048 characters)	         Virtually unlimited for most use cases
+
+A query string is part of the URL (appended after ?) and consists of key-value pairs used mainly for GET requests to pass visible, URL-encoded parameters that are limited in size and cached by browsers.
+In contrast, the request body carries structured data (like JSON) in the HTTP message payload, commonly used for POST/PUT requests where larger, non-visible data needs to be sent securely without URL limitations.
+
+1.4 Cause a 404 and a 500 deliberately. Explain when each happens. Simple code in repo. 
+A 404 Not Found error happens when the client requests a resource that doesn't exist on the server, such as a mistyped URL, a deleted page, or an incorrect endpoint. 
+A 500 Internal Server Error occurs when the server encounters an unexpected condition that prevents it from fulfilling the request, often due to bugs in server-side code, database issues, or configuration problems.
