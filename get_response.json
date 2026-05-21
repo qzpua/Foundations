@@ -7,8 +7,8 @@
         "Accept-Encoding": "gzip, deflate",
         "Host": "httpbin.org",
         "User-Agent": "python-httpx/0.28.1",
-        "X-Amzn-Trace-Id": "Root=1-6a008dea-77cb98bc6c5662183fc231d8"
+        "X-Amzn-Trace-Id": "Root=1-6a06f6c3-14bb2311369910006b292004"
     },
-    "origin": "118.100.221.31",
+    "origin": "175.143.165.77",
     "url": "https://httpbin.org/get?name=alex"
 }
